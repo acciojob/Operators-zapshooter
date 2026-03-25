@@ -1,16 +1,144 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: sans-serif;
+      background: #f0f4f8;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .calculator {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 420px;
+      margin: 0 auto 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .calculator h2 {
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+    .input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .input-row input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input-row input:focus { border-color: #667eea; }
+    .input-row select {
+      padding: 10px 14px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 18px;
+      background: white;
+      cursor: pointer;
+      outline: none;
+    }
+    #calculate {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    #calculate:hover { opacity: 0.9; }
+    #result {
+      margin-top: 16px;
+      padding: 14px;
+      background: #f7f7ff;
+      border: 2px dashed #667eea;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #444;
+      min-height: 50px;
+    }
+    .text-section {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .text-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: #333;
+    }
+    .division {
+      background: white;
+      border-radius: 8px;
+      padding: 16px 24px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #555;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border-left: 5px solid #667eea;
+      transition: all 0.3s ease;
+    }
+    #change_text {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    #change_text:hover { opacity: 0.9; }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
 
+  <!-- ── Calculator Section ── -->
+  <div class="calculator">
+    <h2>🧮 Calculator</h2>
+    <div class="input-row">
+      <input type="number" id="num1" placeholder="Number 1" />
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">−</option>
+        <option value="*">×</option>
+        <option value="/">÷</option>
+      </select>
+      <input type="number" id="num2" placeholder="Number 2" />
+    </div>
+    <button id="calculate">Calculate</button>
+    <div id="result">Result will appear here</div>
+  </div>
+
+  <!-- ── Text Section ── -->
+  <div class="text-section">
+    <h2>📋 Text Containers</h2>
+    <div class="division">Hello</div>
+    <div class="division">Welcome</div>
+    <div class="division">To</div>
+    <div class="division">My</div>
+    <div class="division">Class</div>
+    <button id="change_text">Change Text</button>
+  </div>
+
+  <script type="text/javascript" src="./script.js"></script>
 </body>
-
 </html>
